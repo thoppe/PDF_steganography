@@ -40,12 +40,6 @@ Hide text from machines/humans, make them readable to humans/machines.
 
 ====*
 
-# [example.pdf](example.pdf)
-
-Copy and paste the text in the PDF.
-
-====*
-
 ## How does it work?
 ### Lies. Lies everywhere.
 
@@ -57,7 +51,7 @@ When you copy, the reader only knows the character code.
 
 Make a new font that lies about the mapping.
 
-====
+====*
 
 ### What does a font _look like_?
 `cmr12.pl`
@@ -120,15 +114,25 @@ Letter `b` from `cmr12`
 
 ====
 
+# [example.pdf](example.pdf)
+
+Copy and paste the text in the PDF.
+
+====*
 
 ## Limitations
-
 Currently only alpha-numeric (easy to fix).
-
 Mapping is a simple [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) (can make multiple fonts).
 
-====
+<br>
 
+====+
+## Uses
+Being awesome.
+Hiding text from machines.
+Making an interactive PDF "story" (see me if want to do this).
+
+====
 
 # Thanks, you!
 [@metasemantic](https://twitter.com/metasemantic)
