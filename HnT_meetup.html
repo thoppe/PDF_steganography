@@ -48,9 +48,7 @@
 <hr>
 <p>
 <a href="https://github.com/thoppe/PDF_steganography">https://github.com/thoppe/PDF_steganography</a></p>
-</section>
-</section><section class="vertical-stack">
-<section   class="vertical-slide">
+</section><section   class="vertical-slide">
 <p>
 <h3>First presented at Data Wranglers DC</h3><h2><a href="http://www.meetup.com/Data-Wranglers-DC/events/225710555/">Black Hat Data Wrangling</a></h2></p>
 <figure>
@@ -115,10 +113,63 @@ When you copy, the reader only knows the character code.</p>
 <p>
 Make a new font that lies about the mapping.</p>
 </section>
-</section>==<section class="vertical-stack">
+</section><section class="vertical-stack">
 <section   class="vertical-slide">
 <p>
-===</p>
+<h3>What does a font <em>look like</em>?</h3><code>cmr12.pl</code></p>
+<br>
+<pre><code class=python>(FAMILY CMR12)
+(CODINGSCHEME FONTSPECIFIC)
+(DESIGNSIZE R 10.0)
+(CHECKSUM O 35567353517)
+(FONTDIMEN
+   (SLANT R 0.0)
+   (SPACE R 0.326)
+   (STRETCH R 0.3)
+   (SHRINK R 0.1)
+   (XHEIGHT R 0.431)
+   (QUAD R 1.0)
+   )
+(CHARACTER O 0
+   (CHARWD R 0.611)
+   (CHARHT R 0.673)
+   )
+(CHARACTER O 1
+   (CHARWD R 0.815)
+   (CHARHT R 0.703)
+   )
+...</code></pre>
+</section><section   class="vertical-slide">
+<p>
+<h3>What does a letter <em>look like</em>?</h3>Letter <code>b</code> from <code>cmr12</code></p>
+<br>
+<pre><code class=python>/b {
+18 380 hsbw
+-10 22 hstem
+402 29 hstem
+595 20 hstem
+85 65 vstem
+286 22 vstem
+150 402 rmoveto
+141 hlineto
+29 vlineto
+-141 hlineto
+184 vlineto
+-22 hlineto
+-1 -94 -36 -96 -91 -3 rrcurveto
+-20 vlineto
+85 hlineto
+-278 vlineto
+-111 74 -23 53 vhcurveto
+63 33 62 72 hvcurveto
+57 vlineto
+-22 hlineto
+-55 vlineto
+-72 -29 -42 -39 vhcurveto
+-68 0 93 17 hvcurveto
+closepath
+endchar
+} ND</code></pre>
 </section>
 </section><section class="vertical-stack">
 <section   class="vertical-slide">

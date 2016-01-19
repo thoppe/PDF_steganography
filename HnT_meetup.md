@@ -5,7 +5,7 @@ _(five minute hack-and-tell version)_
 ----------
 [https://github.com/thoppe/PDF_steganography](https://github.com/thoppe/PDF_steganography)
 
-====
+====*
 
 ### First presented at Data Wranglers DC
 ## [Black Hat Data Wrangling](http://www.meetup.com/Data-Wranglers-DC/events/225710555/)
@@ -14,7 +14,7 @@ _(five minute hack-and-tell version)_
 
 [http://thoppe.github.io/Presentation-Black-Hack-Data-Wrangling](http://thoppe.github.io/Presentation-Black-Hack-Data-Wrangling/BHDW_DW_meetup.html/)
 
-=====
+====
 
 ### Steganography
 
@@ -23,7 +23,7 @@ _(five minute hack-and-tell version)_
 ### PDF
 > Portable Document Format. Subset of postscript. Bane of data wranglers.
 
-=====*
+====*
 
 (side note)
 ## Postscript is Turing complete.
@@ -32,7 +32,7 @@ _(five minute hack-and-tell version)_
 Game of Life in Postscript:
 !(images/life.gif) [https://www.tjhsst.edu/~edanaher/pslife/](https://www.tjhsst.edu/~edanaher/pslife/)
 
-=====
+====
 
 ## PDF *+* Steganography
 
@@ -56,10 +56,70 @@ to specific locations on the page.
 When you copy, the reader only knows the character code.
 
 Make a new font that lies about the mapping.
-=====
+
+====
+
+### What does a font _look like_?
+`cmr12.pl`
+
+    (FAMILY CMR12)
+    (CODINGSCHEME FONTSPECIFIC)
+    (DESIGNSIZE R 10.0)
+    (CHECKSUM O 35567353517)
+    (FONTDIMEN
+       (SLANT R 0.0)
+       (SPACE R 0.326)
+       (STRETCH R 0.3)
+       (SHRINK R 0.1)
+       (XHEIGHT R 0.431)
+       (QUAD R 1.0)
+       )
+    (CHARACTER O 0
+       (CHARWD R 0.611)
+       (CHARHT R 0.673)
+       )
+    (CHARACTER O 1
+       (CHARWD R 0.815)
+       (CHARHT R 0.703)
+       )
+    ...
+
+====*
+
+### What does a letter _look like_?
+Letter `b` from `cmr12`
+
+    /b {
+	18 380 hsbw
+	-10 22 hstem
+	402 29 hstem
+	595 20 hstem
+	85 65 vstem
+	286 22 vstem
+	150 402 rmoveto
+	141 hlineto
+	29 vlineto
+	-141 hlineto
+	184 vlineto
+	-22 hlineto
+	-1 -94 -36 -96 -91 -3 rrcurveto
+	-20 vlineto
+	85 hlineto
+	-278 vlineto
+	-111 74 -23 53 vhcurveto
+	63 33 62 72 hvcurveto
+	57 vlineto
+	-22 hlineto
+	-55 vlineto
+	-72 -29 -42 -39 vhcurveto
+	-68 0 93 17 hvcurveto
+	closepath
+	endchar
+	} ND
 
 
-=====
+====
+
 
 ## Limitations
 
