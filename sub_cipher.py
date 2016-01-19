@@ -19,7 +19,7 @@ with open(args.f_raw_in,'r') as FIN:
             char_to_code[m[2]] = m[1]
 
 #sub_letters = string.ascii_letters + string.whitespace + string.digits
-sub_letters = string.ascii_letters# + string.whitespace + string.digits
+sub_letters = string.ascii_letters
 
 CMAP = dict()
 C1 = ['/%s'%c for c in sub_letters]

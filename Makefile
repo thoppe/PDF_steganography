@@ -39,8 +39,11 @@ all:
 	cp gen/$(F).tfm .
 	cp gen/$(F).pfb .
 
-	pdflatex base.tex	
-	evince base.pdf 2>/dev/null &
+	pdflatex example.tex	
+	rm -f *.aux *.log *.pfb *.tfm
+
+	evince example.pdf 2>/dev/null &
+
 
 clean:
 	rm -f *~ *.raw \#*

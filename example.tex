@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{fourier-orns}
+
+\pdfmapline{=cmr12mod cmr12mod <cmr12mod.pfb}
+
+\newcommand{\linebox}[1]
+{
+  \vspace{1em}
+  {\font\test=cmr12mod \test #1}\newline
+
+{
+  \Huge
+  \hrulefill\hspace{0.2cm} 
+  \floweroneleft\floweroneright \hspace{0.2cm} \hrulefill
+}
+  \vspace{1em}
+}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\section{$\star$ Space Oddity $\star$}
+\Large\noindent
+
+Below is a small sample of text, which is otherwise 
+indistinguishable from a random string.
+Copy and paste the text to reveal a hidden message.
+
+\linebox{\input{quote.tex}}
+
+\section{$\star$ and there's nothing I can do $\star$}
+
+\noindent
+The reverse process is also possible, you can make text that machines can't read!
+
+\linebox{\input{gen/sub_message.tex}}
+
+
+\end{document}
