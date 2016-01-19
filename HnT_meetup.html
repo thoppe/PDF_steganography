@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>PDF Steganography</title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="Travis Hoppe">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" 
+	  content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, 
+				   initial-scale=1.0, 
+				   maximum-scale=1.0, 
+				   user-scalable=no">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- Default themes -->
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+    <!-- For LaTeX formating highlighting -->
+    <link rel="stylesheet" href="md2reveal/css/md2reveal_style.css">
+
+    <!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal"><div class="slides">
+	<section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h1>PDF Steganography</h1><em>(five minute hack-and-tell version)</em></p>
+<br>
+<p>
+<strong><a href="http://thoppe.github.io/">Travis Hoppe</a></strong> / <a href="https://twitter.com/metasemantic">@metasemantic</a></p>
+<hr>
+<p>
+<a href="https://github.com/thoppe/PDF_steganography">https://github.com/thoppe/PDF_steganography</a></p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h3>First presented at Data Wranglers DC</h3><h2><a href="http://www.meetup.com/Data-Wranglers-DC/events/225710555/">Black Hat Data Wrangling</a></h2></p>
+<figure>
+    <a href="images/DW.jpg">
+    <img class="transparent_image" src="images/DW.jpg" height="150px">
+    </a>
+    
+    </figure>
+<br>
+<br>
+<p>
+<a href="http://thoppe.github.io/Presentation-Black-Hack-Data-Wrangling/BHDW_DW_meetup.html/">http://thoppe.github.io/Presentation-Black-Hack-Data-Wrangling</a></p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h3>Steganography</h3></p>
+<br>
+<blockquote>Steganography (US ￼i/ˌstɛ.ɡʌnˈɔː.ɡrʌ.fi/) is the practice of concealing a file, message, image, or video within another file, message, image, or video. The word steganography combines the Greek words steganos (στεγανός), meaning "covered, concealed, or protected", and graphein (γράφειν) meaning "writing".</blockquote>
+<br>
+<p>
+<h3>PDF</h3></p>
+<blockquote>Portable Document Format. Subset of postscript. Bane of data wranglers.</blockquote>
+</section><section   class="vertical-slide">
+<p>
+(side note)<h2>Postscript is Turing complete.</h2></p>
+<br>
+<br>
+<p>
+Game of Life in Postscript:</p>
+<figure>
+    <a href="images/life.gif">
+    <img class="" src="images/life.gif" >
+    </a>
+    <figcaption><a href="https://www.tjhsst.edu/~edanaher/pslife/">https://www.tjhsst.edu/~edanaher/pslife/</a></figcaption>
+    </figure>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>PDF <strong>+</strong> Steganography</h2></p>
+<br>
+<p>
+Hide text from machines/humans, make them readable to humans/machines.</p>
+</section><section   class="vertical-slide">
+<p>
+<h1><a href="example.pdf">example.pdf</a></h1></p>
+<br>
+<p>
+Copy and paste the text in the PDF.</p>
+</section><section   class="vertical-slide">
+<p>
+<h2>How does it work?</h2><h3>Lies. Lies everywhere.</h3></p>
+<br>
+<br>
+<p>
+A typical PDF document maps <a href="https://en.wikipedia.org/wiki/Character_encoding">character codes</a> (e.g. <code>A -> 65</code>)<br>to specific locations on the page.</p>
+<br>
+<p>
+When you copy, the reader only knows the character code.</p>
+<br>
+<p>
+Make a new font that lies about the mapping.</p>
+</section>
+</section>==<section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+===</p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>Limitations</h2></p>
+<br>
+<p>
+Currently only alpha-numeric (easy to fix).</p>
+<br>
+<p>
+Mapping is a simple <a href="https://en.wikipedia.org/wiki/Caesar_cipher">caesar cipher</a> (can make multiple fonts).</p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h1>Thanks, you!</h1><a href="https://twitter.com/metasemantic">@metasemantic</a></p>
+</section>
+</section>
+    </div></div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      overview: true, height: 900, keyboard: {37: 'prev', 39: 'next'}, touch: true, hideAddressBar: true, rollingLinks: false, mouseWheel: true, controls: false, width: 1200, viewDistance: 3, rtl: false, progress: true, fragments: true, autoSlide: 0, autoSlideStoppable: true, backgroundtransition: "default", transitionSpeed: "default", slideNumber: true, center: true, embedded: true, transition: "default", maxScale: 1.2, minScale: 0.2, previewLinks: false, margin: 0.05, loop: false, history: true, 
+      
+      theme: Reveal.getQueryHash().theme, 
+      // available themes are in reveal.js/css/theme
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [ { src: 'reveal.js/lib/js/classList.js', condition: function() { 
+    return !document.body.classList; } },
+
+{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: 
+  function() { hljs.initHighlightingOnLoad(); } },
+
+{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: 
+  function() { return !!document.body.classList; } },
+ ]
+
+      });
+    </script>
+
+  </body>
+</html>
