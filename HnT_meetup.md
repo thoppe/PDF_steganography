@@ -125,7 +125,7 @@ Letter `b` from `cmr12`
 
 Currently only alpha-numeric (easy to fix).
 
-Mapping is a simple [caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) (can make multiple fonts).
+Mapping is a simple [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher) (can make multiple fonts).
 
 ====
 
